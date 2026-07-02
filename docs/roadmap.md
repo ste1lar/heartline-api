@@ -17,12 +17,13 @@
 
 ## Phase 1 — 프로젝트 세팅 (여기부터 사용자가 타이핑)
 
-- [ ] `django-admin startproject config .` 로 프로젝트 골격 생성
-- [ ] `apps/` 디렉토리 + 7개 앱 생성 (core, accounts, profiles, matching, payments, reports, notifications)
-- [ ] settings 분리: `config/settings/{base,dev,prod}.py`
-- [ ] django-environ로 `.env` 로딩, PostgreSQL 연결
-- [ ] INSTALLED_APPS 등록 + 각 앱 `apps.py`의 `name` 수정
-- [ ] DRF / SimpleJWT / drf-spectacular / CORS 설정
+- [x] `django-admin startproject config .` 로 프로젝트 골격 생성
+- [x] `apps/` 디렉토리 + 7개 앱 생성 (core, accounts, profiles, matching, payments, reports, notifications)
+- [x] 초기 scaffolding 커밋 + origin/main 푸시
+- [x] settings 분리: `config/settings/{base,dev,prod}.py`
+- [x] django-environ로 `.env` 로딩, PostgreSQL 연결
+- [x] INSTALLED_APPS 등록 + 각 앱 `apps.py`의 `name` 수정
+- [x] DRF / SimpleJWT / drf-spectacular / CORS 설정
 - [ ] `core` 앱: `TimeStampedModel`, `SoftDeleteModel` 추상모델
 - [ ] **Custom User 모델** (`AUTH_USER_MODEL`) — 마이그레이션 *전에* 반드시 먼저!
 - [ ] 첫 `migrate` + `createsuperuser` + `runserver` 동작 확인
