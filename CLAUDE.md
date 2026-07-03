@@ -16,7 +16,14 @@
 - **Claude의 역할**: 단계마다 개념을 설명하고, 초안 코드를 채팅으로 보여주고, *왜* 그렇게 쓰는지 설명한다. 사용자가 친 코드를 리뷰하고 고친다. 학습 문서(`docs/`)를 갱신한다.
 - **사용자의 역할**: `config/`, `apps/` 안의 **모든 Django 코드를 직접 타이핑한다.**
 - **Claude가 직접 파일을 쓰는 범위**: 학습 문서(`CLAUDE.md`, `docs/*`), 순수 환경/ops 설정(`.gitignore`, `.env.example`, `requirements.txt`)에 한함.
-- ❗ **사용자가 명시적으로 요청하지 않는 한, `apps/`·`config/`의 Django 코드를 Claude가 대신 작성하지 않는다.** 막혔을 때 리뷰·수정·힌트만 제공.
+- ❗ **사용자가 명시적으로 요청하지 않는 한, `apps/`·`config/`의 Django 코드를 Claude가 대신 작성하지 않는다.** 막혔을 때 리뷰·수정·힌트만 제공. (예외: 사용자가 인정한 단순 영문 오타는 Claude가 직접 수정 가능)
+
+## 학습자 프로필 & 커뮤니케이션 규칙
+
+- 사용자는 **프론트엔드 개발자** (Next.js / React / TypeScript / SCSS Modules).
+- 백엔드 개념 설명 시 **프론트 생태계 비유를 적극 활용**한다 (예: Swagger UI ≈ Storybook, `objects` ≈ Prisma client, settings 상속 ≈ 스프레드 덮어쓰기). 단, **억지 비유는 금지** — 자연스러운 대응이 있을 때만.
+- **`docs/` 문서는 문어체로 쓴다.** git에 올라가는 문서에 채팅체("ㅇㅇ", "~임" 등)를 쓰지 않는다. 채팅 대화는 편하게 해도 됨.
+- 새로 등장한 개념은 질문-답 파편이 아니라 **전체 그림을 아우르는 정리**로 learning-log에 남긴다.
 
 ## 기술 스택 (고정 버전)
 
@@ -53,9 +60,10 @@ heartline-api/
 │   ├── reports/            # Report, Block
 │   └── notifications/      # Notification
 ├── docs/
-│   ├── roadmap.md          # 8단계 로드맵 + 진행 체크리스트
+│   ├── roadmap.md          # 8단계 로드맵 + 진행 체크리스트 + "다음 작업" 포인터
 │   ├── learning-log.md     # 배운 것/함정/결정 기록
 │   ├── project-structure.md # 폴더/파일 역할 레퍼런스 (Next 비유)
+│   ├── setup.md            # 새 컴퓨터/새 클론 환경 재구축 절차
 │   └── erd.md              # ERD + 모델 레퍼런스 + 상태머신
 ├── requirements.txt
 ├── .env.example
@@ -110,4 +118,6 @@ http://127.0.0.1:8000/api/schema/redoc/          # ReDoc
 
 ## 현재 진행 상태
 
-진행 상태는 [docs/roadmap.md](docs/roadmap.md)의 체크리스트가 **단일 진실 공급원(SSOT)** 입니다. 새 세션은 거기부터 확인하세요.
+진행 상태는 [docs/roadmap.md](docs/roadmap.md)의 체크리스트가 **단일 진실 공급원(SSOT)** 입니다. 새 세션은 거기부터 확인하세요. 단계를 완료하거나 다음 안내를 시작할 때마다 roadmap의 체크박스와 상단 "다음 작업" 포인터를 갱신합니다.
+
+새 컴퓨터에서 clone한 경우: [docs/setup.md](docs/setup.md) 절차로 환경(.venv/.env/PostgreSQL)을 먼저 재구축해야 합니다. **DB 데이터는 git에 없으므로** 컴퓨터마다 `migrate` + `createsuperuser`로 새로 만듭니다.

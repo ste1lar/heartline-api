@@ -3,6 +3,11 @@
 > 이 파일이 진행 상태의 **단일 진실 공급원(SSOT)** 입니다.
 > 항목을 끝낼 때마다 `[ ]` → `[x]` 로 바꾸세요.
 
+## ▶️ 다음 작업
+
+**Phase 2 ① — User를 Django Admin에 등록** (`apps/accounts/admin.py`, `BaseUserAdmin` 상속).
+가이드는 이미 채팅으로 전달됨 — 새 세션이라면 Claude에게 "Phase 2 ① 이어서"라고 하면 된다.
+
 범례: `[ ]` 할 일 · `[~]` 진행 중 · `[x]` 완료
 
 ---
@@ -33,13 +38,14 @@
 
 ## Phase 2 — accounts
 
-- [ ] User 모델 + `UserStatus` (REGISTERED…WITHDRAWN)
-- [ ] 커스텀 UserManager (email 기반)
+- [x] User 모델 + `UserStatus` (REGISTERED…WITHDRAWN) — Phase 1에서 선행 완료
+- [x] 커스텀 UserManager (email 기반) — Phase 1에서 선행 완료
+- [~] Django Admin 등록 (① 가이드 전달됨 — 사용자 타이핑 대기)
 - [ ] IdentityVerification 모델 (1:1, PII 분리)
-- [ ] 회원가입 / 로그인(JWT) / 로그아웃 API
+- [ ] 회원가입 API
+- [ ] 로그인(JWT) / 로그아웃 API
 - [ ] `GET /users/me/`
 - [ ] `POST /auth/mock-verify/` → status VERIFIED 전이
-- [ ] Django Admin 등록
 
 ## Phase 3 — profiles
 

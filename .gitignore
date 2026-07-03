@@ -31,7 +31,8 @@ db.sqlite3-journal
 
 # --- 에디터 / OS ---
 .idea/
-.vscode/
+.vscode/*
+!.vscode/settings.json    # 인터프리터 지정은 공유 (경로가 ${workspaceFolder} 기반이라 이식 가능)
 *.swp
 .DS_Store
 
