@@ -31,8 +31,10 @@ db.sqlite3-journal
 
 # --- 에디터 / OS ---
 .idea/
+# .vscode는 무시하되 settings.json만 공유 (${workspaceFolder} 기반이라 이식 가능)
+# 주의: .gitignore는 줄 끝 주석 미지원 — 패턴 줄에 주석 붙이면 패턴이 깨짐
 .vscode/*
-!.vscode/settings.json    # 인터프리터 지정은 공유 (경로가 ${workspaceFolder} 기반이라 이식 가능)
+!.vscode/settings.json
 *.swp
 .DS_Store
 

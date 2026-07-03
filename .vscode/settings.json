@@ -1,0 +1,7 @@
+{
+  // VSCode/Pylance가 이 프로젝트의 .venv 파이썬을 쓰도록 지정
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+  // apps.* / config.* 같은 프로젝트 내부 import도 인식하도록 루트를 추가
+  "python.analysis.extraPaths": ["${workspaceFolder}"],
+  "python.terminal.activateEnvironment": true
+}
