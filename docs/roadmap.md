@@ -24,10 +24,12 @@
 - [x] django-environ로 `.env` 로딩, PostgreSQL 연결
 - [x] INSTALLED_APPS 등록 + 각 앱 `apps.py`의 `name` 수정
 - [x] DRF / SimpleJWT / drf-spectacular / CORS 설정
-- [ ] `core` 앱: `TimeStampedModel`, `SoftDeleteModel` 추상모델
-- [ ] **Custom User 모델** (`AUTH_USER_MODEL`) — 마이그레이션 *전에* 반드시 먼저!
-- [ ] 첫 `migrate` + `createsuperuser` + `runserver` 동작 확인
-- [ ] Swagger UI 접속 확인
+- [x] `core` 앱: `TimeStampedModel`, `SoftDeleteModel` 추상모델
+- [x] **Custom User 모델** (`AUTH_USER_MODEL`) — 마이그레이션 *전에* 반드시 먼저!
+- [x] 첫 `migrate` + `createsuperuser` + `runserver` 동작 확인 (Admin 로그인 성공)
+- [x] Swagger UI 접속 확인
+
+**🎉 Phase 1 완료 (2026-07-03)**
 
 ## Phase 2 — accounts
 

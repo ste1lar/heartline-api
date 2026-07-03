@@ -79,6 +79,9 @@ DATABASES = {
     "default": env.db("DATABASE_URL"),
 }
 
+# 커스텀 User 모델 지정
+AUTH_USER_MODEL = "accounts.User"
+
 # 비밀번호 검증
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},

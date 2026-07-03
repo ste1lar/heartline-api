@@ -55,6 +55,7 @@ heartline-api/
 ├── docs/
 │   ├── roadmap.md          # 8단계 로드맵 + 진행 체크리스트
 │   ├── learning-log.md     # 배운 것/함정/결정 기록
+│   ├── project-structure.md # 폴더/파일 역할 레퍼런스 (Next 비유)
 │   └── erd.md              # ERD + 모델 레퍼런스 + 상태머신
 ├── requirements.txt
 ├── .env.example
